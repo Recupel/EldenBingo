@@ -7,25 +7,26 @@ var goals = [
   "Deathroot",
   "Dragon Heart",
   "Wretched",
-  "Arcane > 20",
+  "Arcane >= 20",
   "Tree Sentinel",
   "Dectus Medallion",
-  "Night Rider",
-  "Black Beast",
-  "Dexterity > 20",
-  "Faith > 20",
+  "Night's Cavalry",
+  "Black Blade Kindred",
+  "Dexterity >= 20",
+  "Faith >= 20",
   "Iron Cleaver",
   "Castle Morne",
   "Flask +3",
-  "Any Big Bear",
+  "Big Bear",
   "Varre",
   "Death Bird",
   "Grafted Scion",
   "Giant Lobster",
-  "Red Wolf",
+  "Red Wolf of Radagon",
   "Dragon Ruins Chest"
 ];
-/*
+
+// https://stackoverflow.com/a/2450976
 function shuffle(array) {
   let currentIndex = array.length,
     randomIndex;
@@ -47,10 +48,8 @@ function shuffle(array) {
 }
 
 shuffle(goals);
-*/
 
 for (var i = 0; i < 25; i++) {
   var text = i.toString();
-  //console.log(text);
   document.getElementById(text).innerHTML = goals[i];
 }
