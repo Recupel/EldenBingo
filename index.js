@@ -25,7 +25,7 @@ var goals = [
   "Red Wolf",
   "Dragon Ruins Chest"
 ];
-
+/*
 function shuffle(array) {
   let currentIndex = array.length,
     randomIndex;
@@ -47,9 +47,10 @@ function shuffle(array) {
 }
 
 shuffle(goals);
+*/
 
-for (let i = 0; i < 25; i++) {
-  let text = i.toString();
+for (var i = 0; i < 25; i++) {
+  var text = i.toString();
   //console.log(text);
   document.getElementById(text).innerHTML = goals[i];
 }
