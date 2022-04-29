@@ -26,6 +26,18 @@ var goals = [
   "Dragon Ruins Chest"
 ];
 
+// https://werxltd.com/wp/2010/05/13/javascript-implementation-of-javas-string-hashcode-method/
+String.prototype.hashCode = function(){
+	var hash = 0;
+	if (this.length == 0) return hash;
+	for (i = 0; i < this.length; i++) {
+		char = this.charCodeAt(i);
+		hash = ((hash<<5)-hash)+char;
+		hash = hash & hash; // Convert to 32bit integer
+	}
+	return hash;
+}
+
 // https://stackoverflow.com/a/47593316
 function mulberry32(a) {
   return function() {
@@ -36,7 +48,8 @@ function mulberry32(a) {
   }
 }
 
-var mul = mulberry32(window.location.search);
+var seed = window.location.search.hashCode();
+var mul = mulberry32(seed);
 
 // https://stackoverflow.com/a/2450976
 function shuffle(array) {
@@ -65,3 +78,5 @@ for (var i = 0; i < 25; i++) {
   var text = i.toString();
   document.getElementById(text).innerHTML = goals[i];
 }
+
+document.getElementById("seed").innerHTML = seed;
