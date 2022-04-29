@@ -1,5 +1,5 @@
 var goals = [
-  "Rodrick",
+  "Godrick",
   "Rennala",
   "Rykard",
   "Radahn",
@@ -14,7 +14,7 @@ var goals = [
   "Black Blade Kindred",
   "Dexterity >= 20",
   "Faith >= 20",
-  "Iron Cleaver",
+  "Somberless",
   "Castle Morne",
   "Flask +3",
   "Big Bear",
@@ -25,6 +25,18 @@ var goals = [
   "Red Wolf of Radagon",
   "Dragon Ruins Chest"
 ];
+
+// https://stackoverflow.com/a/47593316
+function mulberry32(a) {
+  return function() {
+    var t = a += 0x6D2B79F5;
+    t = Math.imul(t ^ t >>> 15, t | 1);
+    t ^= t + Math.imul(t ^ t >>> 7, t | 61);
+    return ((t ^ t >>> 14) >>> 0) / 4294967296;
+  }
+}
+
+var mul = mulberry32(window.location.search);
 
 // https://stackoverflow.com/a/2450976
 function shuffle(array) {
