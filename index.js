@@ -11,7 +11,7 @@ var goals = [
   "Kill Tree Sentinel",
   "Obtain Iron Cleaver",
   "Kill Night's Cavalry",
-  "Kill Black Blade Kindred",
+  "Kill Tree Guardian",
   "Obtain 5 Spells",
   "Obtain 5 Summons",
   "Obtain 5 Talismans",
